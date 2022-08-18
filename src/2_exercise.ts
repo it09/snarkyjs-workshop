@@ -29,7 +29,9 @@ class Exercise2 extends SmartContract {
 
   @method async update() {
     const x = await this.x.get();
-    throw new Error('TODO: Set the state to the hash of x');
+    //console.log(x);
+    this.x.set(Poseidon.hash([x]));
+    //console.log(await this.x.get());
   }
 }
 

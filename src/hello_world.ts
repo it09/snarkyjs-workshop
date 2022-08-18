@@ -69,7 +69,7 @@ async function runSimpleApp() {
   // Update the snapp
   await Mina.transaction(account1, async () => {
     // 9 = 3^2
-    await snappInstance.update(new Field(9));
+    await snappInstance.update(new Field(27));
   })
     .send()
     .wait();

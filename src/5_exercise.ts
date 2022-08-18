@@ -40,7 +40,17 @@ class SignatureWithSigner extends CircuitValue {
 }
 
 function containsPublicKey(xs: Array<PublicKey>, x: PublicKey): Bool {
-  throw new Error('TODO: Implement containsPublicKey');
+  // let contains = new Bool(false); 
+  // for(let i = 0; i < xs.length; ++i){
+  //   if(xs[i].equals(x))
+  //     return contains;
+  // }
+  // return Bool(!contains);
+  let res = new Bool(false);
+  for(let i = 0; i < xs.length; ++i){
+    res = res.or(xs[i].equals(x));
+  }
+  return res; 
 }
 
 // This implements a snapp account that can be used if a user has
